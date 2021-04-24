@@ -6,6 +6,8 @@ RUN apt update \
     git \
     gcc \
     build-essential \
+    ca-certificates \
+    procps \
     && pip install --no-cache-dir \
     autopep8 \
     flake8 \
