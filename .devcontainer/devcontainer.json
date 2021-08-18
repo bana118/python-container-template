@@ -16,10 +16,7 @@
             "E402",
             "--max-line-length",
             "120"
-        ],
-        "[python]": {
-            "editor.formatOnSave": true
-        }
+        ]
     },
     "extensions": [
         "ms-azuretools.vscode-docker",
