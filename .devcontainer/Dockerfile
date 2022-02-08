@@ -1,4 +1,4 @@
-FROM python:3.9.1-slim
+FROM python:slim
 
 RUN apt update \
     && apt install -y --no-install-recommends \
