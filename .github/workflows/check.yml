@@ -14,20 +14,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9.1
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install flake8 pytest
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: Lint with flake8
-        run: |
-          flake8 src --count --max-line-length=120 --statistic
-      - name: Test with pytest
-        run: pytest
       # - name: Check git tag
       #   uses: bana118/action-autotag@2d64822393af6f3f9db06ad3d1a51c6d756ac2f5
       #   env:
@@ -38,3 +24,17 @@ jobs:
       #     root: ".version"
       #     tag_prefix: "v"
       #     dry_run: true
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Lint with flake8
+        run: |
+          flake8 src --count --max-line-length=120 --statistic
+      - name: Test with pytest
+        run: pytest
